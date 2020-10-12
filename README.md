@@ -1,0 +1,1 @@
+# medical-waste-management-system
