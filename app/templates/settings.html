@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            {{ wtf.quick_form(form) }}
+        </div>
+        <div class="col-md-3 col-md-offset-2">
+            <div class="thumbnail text-center">
+                <div class="caption">
+                    <h4>{{ current_user.name }}</h3>
+                    <p>User ID: {{ current_user.id }}</p>
+                    <p>Phone: {{ current_user.phone}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    <script>
+        document.getElementById("username").className += "active";
+    </script>
+{% endblock script %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <h2>Waste Register</h2><br>
+    <div class="row">
+        <div class="col-md-6">
+            {{ wtf.quick_form(form) }}
+            <br><hr>
+            <h2>Available Waste Type</h2>
+            <table class="table">
+                <thread>
+                    <tr>
+                        <th scope="col">Waste Type</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    <tr>
+                        <th scope="row">A</th>
+                        <td>化学性医疗垃圾</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">B</th>
+                        <td>药物性医疗垃圾</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">C</th>
+                        <td>病理性医疗垃圾</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">D</th>
+                        <td>感染性医疗垃圾</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    <script>
+        document.getElementById("register").className += "active";
+    </script>
+{% endblock script %}

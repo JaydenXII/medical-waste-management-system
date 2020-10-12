@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Unsent Waste</h2><hr>
+            {% for waste in wastes %}
+                <div class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading">Waste ID: {{ waste.id }}</h4>
+                        <small class="text-muted">Collect time: {{ waste.collect_time }}</small>
+                        <p>
+                            Waste Type: {{ waste.type }}
+                            <br>
+                            Collector ID: {{ waste.staff_id }}
+                        </p>
+                    </div>
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    <script>
+        document.getElementById("username").className += "active";
+    </script>
+{% endblock script %}
