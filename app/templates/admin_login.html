@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Medical Waste Manage System">
+    <meta name="author" content="Group ?">
+    <title>Admin Sign in</title>
+    <link rel="icon" href="{{ url_for('static', filename='recycle.png') }}">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static',filename='js/ie-emulation-modes-warning.js') }}"></script>
+    <link href="{{ url_for('static', filename='css/signin.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      {% block content %}{% endblock content %}
+    </div>
+    <div class="container">
+      <h2 class="form-signin-heading form-signin">Administration Login</h2>
+      {% import "bootstrap/wtf.html" as wtf %}
+      {{ wtf.quick_form(form, extra_classes="form-signin") }}
+    </div>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/ie10-viewport-bug-workaround.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+  </body>
+</html>
